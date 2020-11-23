@@ -1,8 +1,6 @@
 package com.example.vacinacorona.service.impl;
 
-import com.example.vacinacorona.domain.pesquisador.Pesquisador;
 import com.example.vacinacorona.domain.voluntario.Voluntario;
-import com.example.vacinacorona.domain.voluntario.VoluntarioDTO;
 import com.example.vacinacorona.domain.voluntario.VoluntarioRepository;
 import com.example.vacinacorona.service.VoluntarioService;
 import org.springframework.beans.factory.annotation.Autowired;

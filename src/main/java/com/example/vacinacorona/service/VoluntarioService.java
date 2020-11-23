@@ -1,7 +1,6 @@
 package com.example.vacinacorona.service;
 
 import com.example.vacinacorona.domain.voluntario.Voluntario;
-import com.example.vacinacorona.domain.voluntario.VoluntarioDTO;
 
 import java.util.List;
 import java.util.Optional;
