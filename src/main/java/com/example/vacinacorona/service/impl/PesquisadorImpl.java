@@ -55,6 +55,7 @@ public class PesquisadorImpl implements PesquisadorService {
             p.setIdade(pesquisador.getIdade());
             p.setCargo(pesquisador.getCargo());
             p.setEmail(pesquisador.getEmail());
+            p.setVacina(pesquisador.getVacina());
             return pesquisadorRepository.save(p);
         });
     }

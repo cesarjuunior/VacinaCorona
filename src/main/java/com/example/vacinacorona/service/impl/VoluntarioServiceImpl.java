@@ -27,14 +27,6 @@ public class VoluntarioServiceImpl implements VoluntarioService {
 
     @Override
     public Voluntario incluir(Voluntario voluntario){
-        Integer maxId = voluntarioRepository.selectMaxId();
-
-        if (maxId == null) {
-            voluntario.setIdVoluntario(1L);
-        } else {
-            voluntario.setIdVoluntario((long) (maxId + 1));
-        }
-
         return voluntarioRepository.save(voluntario);
     }
 
@@ -49,11 +41,12 @@ public class VoluntarioServiceImpl implements VoluntarioService {
         return pesquisadorEntity;
     }
 
-    private Optional<Voluntario> buscarPessoaPeloCodigo(Voluntario pesquisador, Long codigo) {
+    private Optional<Voluntario> buscarPessoaPeloCodigo(Voluntario voluntario, Long codigo) {
         return voluntarioRepository.findById(codigo).map(p -> {
-            p.setNome(pesquisador.getNome());
-            p.setIdade(pesquisador.getIdade());
-            p.setComorbidades(pesquisador.getComorbidades());
+            p.setNome(voluntario.getNome());
+            p.setIdade(voluntario.getIdade());
+            p.setComorbidades(voluntario.getComorbidades());
+            p.setPaisTeste(voluntario.getPaisTeste());
             return voluntarioRepository.save(p);
         });
     }
