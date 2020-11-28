@@ -1,6 +1,5 @@
 package com.example.vacinacorona.domain.efeitosColaterais;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,4 +23,54 @@ public class EfeitosColaterais {
 
     @Transient
     private String tipo;
+
+	public Long getIdEfeitosColaterais() {
+		return idEfeitosColaterais;
+	}
+
+	public void setIdEfeitosColaterais(Long idEfeitosColaterais) {
+		this.idEfeitosColaterais = idEfeitosColaterais;
+	}
+
+	public String getComum() {
+		return comum;
+	}
+
+	public void setComum(String comum) {
+		this.comum = comum;
+	}
+
+	public String getIncomum() {
+		return incomum;
+	}
+
+	public void setIncomum(String incomum) {
+		this.incomum = incomum;
+	}
+
+	public String getRaro() {
+		return raro;
+	}
+
+	public void setRaro(String raro) {
+		this.raro = raro;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+    
+    
 }

@@ -149,6 +149,15 @@ export class AppComponent implements OnInit{
   }
 
   definirEscopo(cod) {
+    this.formularioVoluntario.reset();
+    this.formularioPesquisador.reset();
+    this.formularioEmpresa.reset();
+    this.formularioVacina.reset();
+    this.formularioFases.reset();
+    this.formularioEfeitosColaterais.reset();
+    this.formularioPaises.reset();
+    this.formularioGoverno.reset();
+    
     this.escopo = cod;
     if(this.escopo == 4){
       this.service.getVacinas().subscribe(res=>{
@@ -196,6 +205,7 @@ export class AppComponent implements OnInit{
 
     this.listaPaisesSelecionados = vac.paisesTeste;
     this.listaEfeitosAdicionados = vac.efeitosColaterais;
+    debugger;
 
     this.escopo = 3;
   }

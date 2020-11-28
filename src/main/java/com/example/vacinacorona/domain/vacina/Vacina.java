@@ -51,4 +51,70 @@ public class Vacina {
             joinColumns = {@JoinColumn(name = "idvacina")},
             inverseJoinColumns = {@JoinColumn(name = "id_pais_teste")})
     private List<PaisTeste> paisesTeste;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNomeVacina() {
+		return nomeVacina;
+	}
+
+	public void setNomeVacina(String nomeVacina) {
+		this.nomeVacina = nomeVacina;
+	}
+
+	public String getEstoque() {
+		return estoque;
+	}
+
+	public void setEstoque(String estoque) {
+		this.estoque = estoque;
+	}
+
+	public FasesVacina getFasesVacina() {
+		return fasesVacina;
+	}
+
+	public void setFasesVacina(FasesVacina fasesVacina) {
+		this.fasesVacina = fasesVacina;
+	}
+
+	public List<EfeitosColaterais> getEfeitosColaterais() {
+		return efeitosColaterais;
+	}
+
+	public void setEfeitosColaterais(List<EfeitosColaterais> efeitosColaterais) {
+		this.efeitosColaterais = efeitosColaterais;
+	}
+
+	public Governo getGoverno() {
+		return governo;
+	}
+
+	public void setGoverno(Governo governo) {
+		this.governo = governo;
+	}
+
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
+	}
+
+	public List<PaisTeste> getPaisesTeste() {
+		return paisesTeste;
+	}
+
+	public void setPaisesTeste(List<PaisTeste> paisesTeste) {
+		this.paisesTeste = paisesTeste;
+	}
+    
+    
 }

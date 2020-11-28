@@ -21,4 +21,30 @@ public class PaisTeste {
 
     @Column(name = "num_participantes")
     private String numParticipantes;
+
+	public Long getIdPaisTeste() {
+		return idPaisTeste;
+	}
+
+	public void setIdPaisTeste(Long idPaisTeste) {
+		this.idPaisTeste = idPaisTeste;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getNumParticipantes() {
+		return numParticipantes;
+	}
+
+	public void setNumParticipantes(String numParticipantes) {
+		this.numParticipantes = numParticipantes;
+	}
+    
+    
 }

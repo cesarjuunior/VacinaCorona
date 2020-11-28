@@ -1,13 +1,18 @@
 package com.example.vacinacorona.domain.pesquisador;
 
-import com.example.vacinacorona.domain.fasesVacina.FasesVacina;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
 import com.example.vacinacorona.domain.vacina.Vacina;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-
-import javax.persistence.*;
 
 @Getter @Setter
 @EqualsAndHashCode
@@ -36,5 +41,54 @@ public class Pesquisador {
     @JoinColumn(name = "idvacina")
     private Vacina vacina;
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Integer getIdade() {
+		return idade;
+	}
+
+	public void setIdade(Integer idade) {
+		this.idade = idade;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getCargo() {
+		return cargo;
+	}
+
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
+	}
+
+	public Vacina getVacina() {
+		return vacina;
+	}
+
+	public void setVacina(Vacina vacina) {
+		this.vacina = vacina;
+	}
+    
+    
 
 }

@@ -1,6 +1,5 @@
 package com.example.vacinacorona.domain.voluntario;
 
-import com.example.vacinacorona.domain.empresa.Empresa;
 import com.example.vacinacorona.domain.paisTeste.PaisTeste;
 import lombok.*;
 
@@ -31,4 +30,44 @@ public class Voluntario {
     @OneToOne
     @JoinColumn(name = "id_pais_teste")
     private PaisTeste paisTeste;
+
+	public Long getIdVoluntario() {
+		return idVoluntario;
+	}
+
+	public void setIdVoluntario(Long idVoluntario) {
+		this.idVoluntario = idVoluntario;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getIdade() {
+		return idade;
+	}
+
+	public void setIdade(String idade) {
+		this.idade = idade;
+	}
+
+	public String getComorbidades() {
+		return comorbidades;
+	}
+
+	public void setComorbidades(String comorbidades) {
+		this.comorbidades = comorbidades;
+	}
+
+	public PaisTeste getPaisTeste() {
+		return paisTeste;
+	}
+
+	public void setPaisTeste(PaisTeste paisTeste) {
+		this.paisTeste = paisTeste;
+	}
 }

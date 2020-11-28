@@ -67,6 +67,28 @@
       </form>
 
       <legend style="margin-top: 30px">Efeitos Colaterais:</legend>
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">Raridade</th>
+          <th scope="col">Ações</th>
+        </tr>
+        </thead>
+        <tbody >
+        <tr *ngFor="let vac of this.listaEfeitosAdicionados">
+          <td>{{vac.descricao}}</td>
+          <td>
+            <span *ngIf="vac.comum == 'SIM'">Comum</span>
+            <span *ngIf="vac.incomum == 'SIM'">Incomum</span>
+            <span *ngIf="vac.raro == 'SIM'">Raro</span>
+          </td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="excluirEfeito(vac)" style="margin-left: 5px"><i class="fa fa-trash"> </i></button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
       <form class="form-group" [formGroup]="this.formularioEfeitosColaterais">
         <label>Descrição</label>
         <input type="text" class="form-control w-25" formControlName="descricao"
@@ -108,6 +130,24 @@
 
       <form class="form-group" [formGroup]="this.formularioPaises">
         <legend style="margin-top: 30px">Países que serão testados:</legend>
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Nº Participantes</th>
+            <th scope="col">Ações</th>
+          </tr>
+          </thead>
+          <tbody >
+          <tr *ngFor="let vac of this.listaPaisesSelecionados">
+            <td>{{vac.nome}}</td>
+            <td>{{vac.numParticipantes}}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="excluirPais(vac)" style="margin-left: 5px"><i class="fa fa-trash"> </i></button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
         <label>Nome</label>
         <input type="text" class="form-control w-25" formControlName="nome" placeholder="Nome do país">
         <label>Número de participantes</label>
@@ -187,12 +227,18 @@
         <thead>
         <tr>
           <th scope="col">Nome</th>
+          <th scope="col">Raridade</th>
           <th scope="col">Ações</th>
         </tr>
         </thead>
         <tbody >
         <tr *ngFor="let vac of this.listaEfeitosAdicionados">
           <td>{{vac.descricao}}</td>
+          <td>
+            <span *ngIf="vac.comum == 'SIM'">Comum</span>
+            <span *ngIf="vac.incomum == 'SIM'">Incomum</span>
+            <span *ngIf="vac.raro == 'SIM'">Raro</span>
+          </td>
           <td>
             <button class="btn btn-danger btn-sm" (click)="excluirEfeito(vac)" style="margin-left: 5px"><i class="fa fa-trash"> </i></button>
           </td>
@@ -243,12 +289,14 @@
         <thead>
         <tr>
           <th scope="col">Nome</th>
+          <th scope="col">Nº Participantes</th>
           <th scope="col">Ações</th>
         </tr>
         </thead>
         <tbody >
         <tr *ngFor="let vac of this.listaPaisesSelecionados">
           <td>{{vac.nome}}</td>
+          <td>{{vac.numParticipantes}}</td>
           <td>
             <button class="btn btn-danger btn-sm" (click)="excluirPais(vac)" style="margin-left: 5px"><i class="fa fa-trash"> </i></button>
           </td>

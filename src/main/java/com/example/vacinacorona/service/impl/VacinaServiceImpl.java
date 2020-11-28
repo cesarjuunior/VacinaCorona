@@ -1,18 +1,15 @@
 package com.example.vacinacorona.service.impl;
 
-import com.example.vacinacorona.domain.efeitosColaterais.EfeitosColateraisRepository;
-import com.example.vacinacorona.domain.empresa.EmpresaRepository;
-import com.example.vacinacorona.domain.fasesVacina.FasesVacinaRepository;
-import com.example.vacinacorona.domain.governo.GovernoRepository;
-import com.example.vacinacorona.domain.paisTeste.PaisTesteRepository;
-import com.example.vacinacorona.domain.vacina.Vacina;
-import com.example.vacinacorona.domain.vacina.VacinaRepository;
-import com.example.vacinacorona.service.VacinaService;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import com.example.vacinacorona.domain.fasesVacina.FasesVacinaRepository;
+import com.example.vacinacorona.domain.vacina.Vacina;
+import com.example.vacinacorona.domain.vacina.VacinaRepository;
+import com.example.vacinacorona.service.VacinaService;
 
 @Service
 public class VacinaServiceImpl implements VacinaService {
@@ -22,18 +19,6 @@ public class VacinaServiceImpl implements VacinaService {
 
     @Autowired
     private FasesVacinaRepository fasesVacinaRepository;
-
-    @Autowired
-    private EfeitosColateraisRepository efeitosColateraisRepository;
-
-    @Autowired
-    private GovernoRepository governoRepository;
-
-    @Autowired
-    private EmpresaRepository empresaRepository;
-
-    @Autowired
-    private PaisTesteRepository paisTesteRepository;
 
     @Override
     public Vacina inserir(Vacina vacina){
@@ -51,25 +36,6 @@ public class VacinaServiceImpl implements VacinaService {
         } else {
             vacina.setId((long) (maxIdVac + 1));
         }
-
-        /*vacina.getPaisesTeste().forEach(paisTeste -> {
-            this.paisTesteRepository.inserir(paisTeste.getNome(), paisTeste.getNumParticipantes());
-        });
-
-        vacina.getEfeitosColaterais().forEach(efeitosColaterais -> {
-            this.efeitosColateraisRepository.inserir(efeitosColaterais.getDescricao(), efeitosColaterais.getComum(),
-                    efeitosColaterais.getIncomum(), efeitosColaterais.getRaro());
-        });
-
-        this.governoRepository.inserir(vacina.getGoverno().getNome());
-        this.empresaRepository.inserir(vacina.getEmpresa().getNomeEmpresa());
-        this.fasesVacinaRepository.inserir(vacina.getFasesVacina().getId(), vacina.getFasesVacina().getFase1(),
-                vacina.getFasesVacina().getFase2(),vacina.getFasesVacina().getFase3(),vacina.getFasesVacina().getFase4());
-        Long idGoverno = this.governoRepository.selectMaxId();
-        Long idEmpresa = this.empresaRepository.selectMaxId();
-
-        this.vacinaRepository.inserir(vacina.getId(), vacina.getNomeVacina(), vacina.getEstoque(), vacina.getFasesVacina().getId(),
-                idGoverno, idEmpresa);*/
 
         return this.vacinaRepository.save(vacina);
     }

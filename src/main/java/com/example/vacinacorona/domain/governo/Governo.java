@@ -17,4 +17,19 @@ public class Governo {
     @Column(name = "id_governo")
     private Long idGoverno;
     private String nome;
+    
+	public Long getIdGoverno() {
+		return idGoverno;
+	}
+	public void setIdGoverno(Long idGoverno) {
+		this.idGoverno = idGoverno;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+    
+    
 }
